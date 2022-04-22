@@ -1,0 +1,97 @@
+---
+title: "Bar Chart Solid"
+img: "https://user-images.githubusercontent.com/65520537/164650402-4a627c9b-4d17-4145-bd23-e9bfd22e58bd.png"
+description: "This is Example Template for Bar Chart Solid"
+date: 22-04-2022
+gitusername: "sophat.leat"
+post: "https://gitlab.com/turbotech_system_doc/standard-template/docs/-/edit/main/posts/barChartSolid.mdx"
+author: Leat Sophat
+profile: "https://media-exp1.licdn.com/dms/image/C5103AQEUWE1XgX9jBg/profile-displayphoto-shrink_200_200/0/1584979740813?e=1653523200&v=beta&t=8zDA1D4XOfriqkEuu6LY6_q5wFKcdql1aC3Ik35hNMQ"
+---
+
+###  Bar Chart Solid 📊📈📉
+This is Example Template for **Bar Chart Solid**.
+
+### 1. Example Preview
+
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/65520537/164621046-854ccec9-ed67-4744-9283-3ea57d3c5fc3.png"/>
+</div>
+
+### 2. Example Code
+##### 2.1 Html
+```html
+{{--  chart  --}}
+<li class="eachCard px-0 pt-0 col-span-2 md:col-span-1">
+    <div class="flex divide-x h-12 border-b divide-secondary-200 p-0">
+        <h2 class="p-3 font-md w-full block font-medium dark:text-gray-100">Bar with Line Chart Outline </h2>
+    </div>
+    <div class="p-2 sm:p-5">
+        <canvas id="barWithLine" class="min-h-min sm:min-h-[20rem]"></canvas>
+    </div>
+</li>
+{{--  chart  --}}
+
+{{--  chartjs  --}}
+<script src="{{ asset('js/chart.js') }}"></script>
+{{--  chartjs  --}}
+```
+##### 2.2 Javascript
+```js
+// Config
+var barChartOutlineConfig = {
+    maintainAspectRatio: false,
+    responsive: true,
+    scales: {
+        y: {
+            stacked: true,
+            grid: {
+                display: true,
+                color: "rgba(255,99,132,0.2)"
+            }
+        },
+        x: {
+            grid: {
+                display: false
+            }
+        }
+    }
+};
+
+// Data
+var barChartOutlineData = {
+    labels: ["Mon", "Tue", "Wen", "Thu", "Fri", "Sat"],
+    datasets: [
+        {
+            label: "New",
+            backgroundColor: "rgb(31,168,224,0.2)",
+            borderColor: "rgba(31,168,224,1)",
+            borderWidth: 2,
+            hoverBackgroundColor: "rgba(31,168,224,0.4)",
+            hoverBorderColor: "rgba(31,168,224,1)",
+            data: [65, 234, 35, 85, 56, 67],
+        },
+        {
+            label: "Contacted",
+            backgroundColor: "rgb(92,224,31,0.2)",
+            borderColor: "rgba(92,224,31,1)",
+            borderWidth: 2,
+            hoverBackgroundColor: "rgba(92,224,31,0.4)",
+            hoverBorderColor: "rgba(92,224,31,1)",
+            data: [65, 100, 35, 81, 56, 55],
+            stack: 'combined',
+        }
+    ]
+};
+
+// Create 
+new Chart('barChartOutline', {
+    type: 'bar',
+    options: barChartOutlineConfig,
+    data: barChartOutlineData
+});
+```
+
+<div align={`center`}>
+    ChartJS <a href="https://www.chartjs.org/docs/latest/samples/line/line.html" style={{ color: 'rgba(var(--ni-primary-500))' }}> Learn More</a> <br/>
+</div>
